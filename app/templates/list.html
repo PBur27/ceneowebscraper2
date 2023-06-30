@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Lista produktów{% endblock %}
+{% block content %}
+<div class="container">
+    <table id="myTable" class="table table-bordered table-striped p-2">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Review Count</th>
+                <th>Pros</th>
+                <th>Cons</th>
+                <th>Average Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stats %}
+            <tr>
+                <td>
+                    <a href="{{url_for('product', product_code=item.id)}}">
+                        <div>
+                            {{ item.name }}
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <div>
+                        {{ item.opinions_count }}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{ item.pros_count }}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{ item.cons_count }}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {{ item.avg_score }}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

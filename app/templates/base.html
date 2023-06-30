@@ -2,32 +2,66 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- jQuery & Datatables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <title>Ceneo Web Scraper</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div class="container.fluid bg-dark text-center p-2">
-            <h1 class="display-1 text-light">Ceneo Web Scraper</h1>
-            <small class="text-light">ceneo.pl review aggregator</small>
-        </div>
+    <header class="container text-center">
+        <h1>Ceneo Web Scraper</h1>
     </header>
-    <div>
-        <h1>Opis projektu</h1>
-        <h2>Cel aplikacji</h2>
-        <h3></h3>
+    <nav class="navbar navbar-expand-lg navbar-light container" style="background-color: #fff3cd; color: #664d03; border-color: #ffecb5;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index"><i class="bi bi-house-fill"></i> Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/extraction"><i class="bi bi-cloud-download-fill"></i>Pobierz produkt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list"><i class="bi bi-list-stars"></i> Lista produktów</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/author"><i class="bi bi-person-circle"></i> O autorze</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid text-center mx-auto w-75">
+        <div class="row">
+            <div class="col">
+                <h2>
+                    {% block title %}
+                    {% endblock %}
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
-    <div class="row">
-
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <footer class="container alert alert-warning fixed-bottom">
+        Paweł Burda
+    </footer>
+    {% block script %}
+    {% endblock %}
 </body>
-
 </html>
