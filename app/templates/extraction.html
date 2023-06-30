@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
-{% block title %}Pobierz opinie{% endblock %}
+{% block title %}
+<h1>
+    Pobierz opinie
+</h1>
+<div class="container-fluid py-2">
+    <hr class="my-0">
+</div>
+{% endblock %}
 {% block content %}
 <form method="POST" action="">
     {% if error_message %}
     <p class="error">{{ error_message }}</p>
     {% endif %}
     <div class="row g-3 align-items-center">
-        <div class="col-auto">
+        <div class="col">
             <label for="product_id" class="col-form-label">Kod produktu</label>
             <div class="col-auto">
                 <input type="text" required id="product_id" name="product_id" placeholder="Wpisz kod produktu" class="form-control" aria-describedby="passwordHelpInline">
             </div>
-            <div class="col-auto">
+            <div class="col-auto my-2">
                 <input type="submit" class="btn btn-warning" value="Pobierz">
             </div>
         </div>

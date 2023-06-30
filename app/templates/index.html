@@ -1,8 +1,48 @@
 {% extends 'base.html' %}
-{% block title %}Opis projektu{% endblock %}
+{% block title %}
+<h1>
+    Opis projektu
+</h1>
+<div class="container-fluid py-2">
+    <hr class="my-0">
+</div>
+{% endblock %}
 {% block content %}
-    <h3>Cel aplikacji</h3>
-    <h3>Opis działania aplikacji</h3>
-    <h3>Zastosowane biblioteki</h3>
-    <h3>Zastosowane podejścia</h3>
+<h3>Cel aplikacji</h3>
+<p>Celem aplikacji jest pobieranie i analizowanie opinii o produktach na stronie Ceneo.pl</p>
+<h3>Opis działania aplikacji</h3>
+<p>Aplikacja wykorzystuje biblioteki takie jak BeautifulSoup do analizy strony internetowej i wyodrębniania potrzebnych
+    informacji, requests do pobierania danych z serwisu Ceneo.pl, pandas do przetwarzania danych, a także matplotlib do
+    generowania wykresów na podstawie zgromadzonych informacji. Wykorzystuje również framework Flask do obsługi żądań
+    HTTP i generowania stron internetowych, co umożliwia użytkownikom interakcję z aplikacją poprzez przeglądarkę.</p>
+<h3>Zastosowane biblioteki</h3>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>BeautifulSoup:</b><br> Jest to biblioteka do parsowania i ekstrakcji danych z dokumentów HTML i
+        XML. Pozwala na łatwe wyszukiwanie i manipulację elementami strony internetowej, co jest przydatne przy
+        ekstrakcji opinii z serwisu Ceneo.pl.</li>
+    <li class="list-group-item"><b>requests:</b><br> Biblioteka requests umożliwia wysyłanie żądań HTTP i pobieranie danych z
+        serwera. Służy do pobierania stron internetowych z serwisu Ceneo.pl, co umożliwia aplikacji dostęp do opinii o
+        produktach.</li>
+    <li class="list-group-item"><b>pandas:</b><br> Jest to biblioteka do manipulacji i analizy danych. Umożliwia łatwą obróbkę
+        danych w formie tabel, takich jak opinie o produktach, dzięki czemu można łatwo przetwarzać i analizować
+        zgromadzone informacje.</li>
+    <li class="list-group-item"><b>matplotlib:</b><br> Biblioteka matplotlib służy do tworzenia różnych rodzajów wykresów i
+        wizualizacji danych. Pozwala na generowanie wykresów na podstawie statystyk i danych zgromadzonych z opinii o
+        produktach, co umożliwia wizualizację tych informacji w czytelny sposób.</li>
+    <li class="list-group-item"><b>Flask:</b><br> Jest to framework do tworzenia aplikacji webowych w języku Python. Umożliwia
+        obsługę żądań HTTP, generowanie stron internetowych i zarządzanie trasowaniem. Flask pozwala na interakcję
+        użytkownika z aplikacją poprzez przeglądarkę, umożliwiając ekstrakcję opinii, generowanie wykresów i
+        wyświetlanie statystyk na stronach internetowych.</li>
+</ul>
+
+<h3>Zastosowane podejścia</h3>
+    
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Modularność kodu</li>
+    <li class="list-group-item">Scraping danych z serwisu Ceneo.pl</li>
+    <li class="list-group-item">Analiza danych i generowanie wykresów</li>
+    <li class="list-group-item">Interakcja z użytkownikiem poprzez Flask</li>
+    <li class="list-group-item">Automatyzacja i zapis danych</li>
+</ul>
 {% endblock %}

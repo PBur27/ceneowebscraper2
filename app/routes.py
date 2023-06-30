@@ -27,7 +27,6 @@ def extract():
         all_opinions = []
         url = f"https://www.ceneo.pl/{product_code}#tab=reviews"
         while(url):
-            print(url)
             response = requests.get(url)
             page = BeautifulSoup(response.text, 'html.parser')
             opinions = page.select("div.js_product-review")
@@ -118,8 +117,7 @@ def product(product_code):
     file_path = os.path.join("./app/static/opinions/", product_code)
     with open(file_path, "r", encoding="utf8") as file:
         json_data = json.load(file)
-    # pobranie zplików JSON opinii o prosukcie i statystyk o nim
-    # przekazanie opinii i statystyk do szablonu HTML
+
     return render_template("product.html", product_code=product_code, data=json_data)
 
 @app.route("/product/<product_code>/graphs")
